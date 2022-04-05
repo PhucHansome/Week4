@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    function Mobile(name, bat, mes, inboxs, sent ){
+        this.name= name;
+        this.batery = 100;
+        this.message = "";
+        this.inboxs = [];
+        this.sents = [];
+        this.status = true;
+
+        this.checkStatus = function(){
+            return this.status;
+        }
+        this.turnOnOff =function(){
+            if(statusPhone=="ON"){
+                this.status = true;
+            } else{
+                this.status = false;
+            }
+        }
+        this.charge = function(numberBattery){
+            this.battẻy = this. numberBattery + numberBattery;
+        }
+    }
+    let iPhone = new Mobile("Iphone",80, "Hello world", [], [], true );
+    console.log(iPhone.battery);
+    iPhone.turnOnOff("ON")
+
+    let Nokia = new Mobile("Nokia", 50, "this is nokia", [], [], false);
+    // console.log(Nokia.battery);
+    console.log(Nokia.status);
+</script>
+</html>

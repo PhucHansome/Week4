@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let Mobile = function(pin){
+            this.pin = pin;
+            this.message_composing = "";
+            this.inbox = "";
+            this.message_sent = "";
+            this.on_off = "off"
+            this.get_on_off = function(){
+                return this.on_off;
+            }
+            this.set_on_off = function(on_off){
+                return this.on_off;
+            }
+            this.get_pin = function(){
+                return this.pin;
+            }
+            this.set_pin = function(pin){
+                return this.pin = pin;
+            }
+            
+            this.set_message_composing = function(message_composing){
+                if(this.on_off = "on"){
+                    this.set_pin(this.pin - 1);
+                    return this.message_composing = message_composing;
+                }
+            }
+            // chức năng soạn tinh nhắn
+            this.get_message_composing = function(){
+                if(this.on_off == "on"){
+                    this.set_pin(this.pin - 1);
+                    return this.message_composing = message_composing;
+                }
+            }
+            //chức năng hiện thị tin nhắn đang soạn
+            this.get_message_composing = function(){
+                if(this.on_off == "on"){
+                    this.set_pin(this.pin - 1);
+                    return this.message_composing;
+                }
+            }
+            // chức năng nhận tin nhắn 
+            this.set_inbox = function(message){
+                return this.inbox = message;
+            }
+            // chức năng gửi tin nhắn cho điện thoại khác
+            this.sent_message = function(message,phone){
+                if(this.on_off == "on"){
+                    this.set_pin(this,pin - 1);
+                    this.message_sent = message;
+                    return phone.set_inbox(message);
+                }
+            }
+            //chức năng kiểm tra hộp thư đến
+            this.get_inbox = function(){
+                if(this.on_off == "on"){
+                    this.set_pin(this.pin - 1);
+                    return this.inbox;
+                }
+            }
+            //chức năng tin nhắn đã gửi
+            this.get_message_sent = function(){
+                if(this.on_off == "on"){
+                    this.set_pin(this.pin - 1);
+                    return this.message_sent;
+                }
+            }
+        }
+        let xiaomi = new Mobile(100);
+        let iphone = new Mobile(100);
+        console.log(xiaomi.get_on_off());
+        console.log(iphone.get_on_off()); 
+        xiaomi.set_on_off("on");
+        iphone.set_on_off("on");
+        xiaomi.sent_message("hello Iphone",iphone);
+        console.log(xiaomi.message_sent);
+        console.log(iphone.get_inbox());
+
+    </script>
+</body>
+</html>
